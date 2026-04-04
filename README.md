@@ -1,60 +1,56 @@
-# 🛡️ AIP-HSD // UNIVERSAL POLYGLOT SENTINEL
+# 🛡️ AIP-HSD // THE QUANTUM-READY SOAR SENTINEL
 
-![Version](https://img.shields.io/badge/version-v1.1.0-blue.svg)
-![Architecture](https://img.shields.io/badge/Architecture-Polyglot--Universal-orange.svg)
-![Packages](https://img.shields.io/badge/Release-Universal--Packages-blueviolet.svg)
+![Version](https://img.shields.io/badge/version-v1.2.0-purple.svg)
+![Architecture](https://img.shields.io/badge/Architecture-Quantum--SOAR--Polyglot-orange.svg)
+![Security](https://img.shields.io/badge/Security-PQC--Native-brightgreen.svg)
 
-**AIP-HSD** is the world's most versatile AI-driven security dashboard. It is a full-spectrum intelligence platform implemented across every major programming language, allowing you to choose the stack that fits your organization's expertise and performance requirements.
-
----
-
-## 🌎 Choose Your Stack
-
-AIP-HSD is available in multiple implementations. You can mix and match any Backend with any Frontend.
-
-### ⚙️ Backends
-| Language | Framework | Package / Link |
-| :--- | :--- | :--- |
-| **Python** | FastAPI | `pip install aiphsd-python` |
-| **Node.js** | Express | `npm install aiphsd-backend-nodejs` |
-| **Go** | Gin | `go get github.com/yourusername/aiphsd-go` |
-| **Rust** | Axum | `cargo install aiphsd-backend-rust` |
-
-### 🖥️ Frontends
-| Framework | Edition | Best For |
-| :--- | :--- | :--- |
-| **React-TS** | Enterprise | Complex, type-safe security HUDs. |
-| **Next.js** | Modern | SSR-capable, ultra-fast analytics views. |
-| **Static HTML** | Portable | Zero-dependency, lightweight deployments. |
+**AIP-HSD** is the world's most advanced, polyglot, and future-proof AI security dashboard. It integrates real-time OSINT with automated SOAR playbooks, scientific risk forecasting, and post-quantum cryptographic primitives.
 
 ---
 
-## 🪟 Windows Standalone Installer
-For Windows users, we provide a unified **Universal Setup (.exe)**. During installation, you can select your preferred backend and frontend components, and the installer will configure the environment for you.
+## 🚀 Advanced Modular Core
+
+### 🔮 Scientific Risk Forecasting (Julia)
+Leverages Julia's computational power to project threat trends and risk levels into the future, providing a 7-day predictive window for SOC analysts.
+
+### ⚡ Ultra-fast Packet Parsing (Zig)
+A low-level, high-performance packet analysis engine written in Zig, ensuring zero-latency traffic inspection at the source.
+
+### 🛡️ SOAR Playbook Engine (Python)
+Automated incident response orchestration. The platform can autonomously contain ransomware, block phishing domains, and rotate credentials using pre-defined tactical playbooks.
+
+### 🔒 Post-Quantum Cryptography (Rust)
+The Rust Performance Core is now equipped with PQC stubs, preparing the platform for the quantum era with Kyber and Dilithium-inspired primitives.
 
 ---
 
-## 🚀 Key Multi-Stack Features
-- **🔄 Universal AI Orchestrator**: Logic remains consistent across Python, Go, and Rust implementations.
-- **📈 Polyglot Agent Network**: Unified telemetry via Go, C++, and Python agents.
-- **🛡️ Hardened Security**: JWT & RBAC parity across all backend implementations.
-- **🧪 Advanced Sandbox**: Behavior analysis logic ported for high-performance Rust and Node systems.
+## 🖥️ Immersive 3D HUD (Three.js)
+The frontend features an immersive 3D Security Operations Center view, visualizing global threat hotspots and attack vectors in a interactive three-dimensional environment.
 
 ---
 
-## 🚦 Getting Started (Universal)
+## 🧩 The Universal Language Matrix
+AIP-HSD now supports an unprecedented array of technologies:
 
-### 🐳 Docker (Multi-Stack)
+| Category | Languages / Tools |
+| :--- | :--- |
+| **Backends** | Python (FastAPI), Node.js (Express), Go (Gin), Rust (Axum) |
+| **Frontends** | React-TS, Next.js 14, Static HTML, Three.js (3D) |
+| **Performance** | Rust (PQC/Malware), Zig (Packets), Julia (Forecasting) |
+| **Reliability** | Elixir (Alert Hub), Haskell (Policy Verifier) |
+| **Automation** | Python (SOAR), Ruby (Maintenance), Clojure (Rules) |
+| **Infrastructure** | Terraform, Ansible, Docker (GHCR) |
+| **Mobile** | Swift (iOS), Kotlin (Android) |
+
+---
+
+## 🚦 Deployment
+
+### 🐳 Polyglot Deployment
 ```bash
-# Default (Python + React-TS)
+# Full platform with all modules
 docker-compose -f docker/docker-compose.yml up --build
 ```
 
-### 🛠️ Manual Build (Example: Go Backend + Static HUD)
-```bash
-cd backend/go && go build -o aiphsd-go cmd/main.go && ./aiphsd-go
-# Open frontend/html-static/index.html in browser
-```
-
 ---
-*Architected by Jules // The Universal Polyglot Sentinel.*
+*Architected by Jules // The Quantum-Ready SOAR Sentinel.*
