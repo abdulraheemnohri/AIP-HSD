@@ -1,0 +1,22 @@
+# AIP-HSD Deployment Playbook (Ansible)
+# Stub for automated server configuration and platform deployment
+
+- name: Deploy AIP-HSD Platform
+  hosts: security_servers
+  become: yes
+  tasks:
+    - name: Install Docker and Docker Compose
+      apt:
+        name:
+          - docker.io
+          - docker-compose
+        state: present
+        update_cache: yes
+
+    - name: Copy Docker Compose Configuration
+      copy:
+        src: ../../docker/docker-compose.yml
+        dest: /opt/aiphsd/docker-compose.yml
+
+    - name: Deploy Platform Stack
+      shell: "cd /opt/aiphsd && docker-compose up -d"
