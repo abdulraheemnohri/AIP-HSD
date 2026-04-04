@@ -23,10 +23,30 @@ class DeviceStatus(str, Enum):
     VULNERABLE = "vulnerable"
     COMPROMISED = "compromised"
 
+# Device Schemas with display telemetry
+class DeviceBase(BaseModel):
+    ip_address: str
+    os: str
+    hostname: str
+    role: Optional[str] = None
+    status: DeviceStatus = DeviceStatus.ONLINE
+    risk_score: float = Field(default=0.0, ge=0, le=100)
+    screen_resolution: Optional[str] = None # Added for display telemetry
+
+class DeviceCreate(DeviceBase):
+    pass
+
+class Device(DeviceBase):
+    id: int
+    last_scan: Optional[datetime] = None
+
+    class Config:
+        from_attributes = True
+
 # Threat Schemas
 class ThreatBase(BaseModel):
     name: str
-    type: str # More flexible
+    type: str
     source: str
     risk_score: float = Field(..., ge=0, le=100)
     location: Optional[str] = None
@@ -42,29 +62,10 @@ class Threat(ThreatBase):
     class Config:
         from_attributes = True
 
-# Device Schemas
-class DeviceBase(BaseModel):
-    ip_address: str
-    os: str
-    hostname: str
-    role: Optional[str] = None
-    status: DeviceStatus = DeviceStatus.ONLINE
-    risk_score: float = Field(default=0.0, ge=0, le=100)
-
-class DeviceCreate(DeviceBase):
-    pass
-
-class Device(DeviceBase):
-    id: int
-    last_scan: Optional[datetime] = None
-
-    class Config:
-        from_attributes = True
-
 # Alert Schemas
 class AlertBase(BaseModel):
     title: str
-    severity: str # More flexible for simulator
+    severity: str
     message: str
     device_id: Optional[int] = None
     threat_id: Optional[int] = None

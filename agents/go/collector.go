@@ -14,10 +14,11 @@ type Event struct {
 	EventType   string \`json:"event_type"\`
 	Severity    string \`json:"severity"\`
 	Payload     struct {
-		Hostname  string    \`json:"hostname"\`
-		IPAddress string    \`json:"ip_address"\`
-		Message   string    \`json:"message"\`
-		Timestamp time.Time \`json:"timestamp"\`
+		Hostname         string    \`json:"hostname"\`
+		IPAddress        string    \`json:"ip_address"\`
+		Message          string    \`json:"message"\`
+		ScreenResolution string    \`json:"screen_resolution"\` // Added display telemetry
+		Timestamp        time.Time \`json:"timestamp"\`
 	} \`json:"payload"\`
 }
 
@@ -32,9 +33,10 @@ func main() {
 	event.Payload.Hostname = hostname
 	event.Payload.IPAddress = "127.0.0.1"
 	event.Payload.Message = fmt.Sprintf("System Status: %s %s", runtime.GOOS, runtime.GOARCH)
+	event.Payload.ScreenResolution = "2048x1536 (Tablet)" // Simulating tablet
 	event.Payload.Timestamp = time.Now()
 
-	fmt.Printf("AIP-HSD Go Agent: Emitting Unified Event...\n")
+	fmt.Printf("AIP-HSD Go Agent: Emitting Unified Event with Display Telemetry...\n")
 	payload, _ := json.MarshalIndent(event, "", "  ")
 	fmt.Println(string(payload))
 }
