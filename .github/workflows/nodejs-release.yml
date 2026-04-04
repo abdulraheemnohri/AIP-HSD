@@ -1,0 +1,19 @@
+name: Release // Node.js Package (NPM/GHCR)
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+jobs:
+  build-node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Build and Publish
+        run: |
+          cd backend/nodejs
+          npm install
+          # npm publish # Actual publish

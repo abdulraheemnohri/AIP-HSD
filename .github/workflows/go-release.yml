@@ -1,0 +1,23 @@
+name: Release // Go Module & Binary
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+jobs:
+  build-go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21'
+      - name: Build Binary
+        run: |
+          cd backend/go
+          go build -o aiphsd-go cmd/main.go
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: aiphsd-go-binary
+          path: backend/go/aiphsd-go

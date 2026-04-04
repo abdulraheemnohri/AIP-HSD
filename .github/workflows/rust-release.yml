@@ -1,0 +1,21 @@
+name: Release // Rust Crate & Binary
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+jobs:
+  build-rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Build
+        run: |
+          cd backend/rust_server
+          cargo build --release
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: aiphsd-rust-binary
+          path: backend/rust_server/target/release/aiphsd-backend-rust
