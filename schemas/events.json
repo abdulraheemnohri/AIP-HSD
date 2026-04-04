@@ -1,0 +1,12 @@
+{
+  "event_id": "UUID",
+  "source_agent": "GO_COLLECTOR | CPP_SNIFFER | PY_AGENT",
+  "event_type": "TELEMETRY | ALERT | LOG",
+  "severity": "LOW | MEDIUM | HIGH | CRITICAL",
+  "payload": {
+    "hostname": "string",
+    "ip_address": "string",
+    "message": "string",
+    "timestamp": "ISO-8601"
+  }
+}
