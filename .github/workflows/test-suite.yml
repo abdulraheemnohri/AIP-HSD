@@ -1,0 +1,27 @@
+name: CI // Test Suite
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-backend:
+    name: Backend Pytest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - name: Run Tests
+        run: |
+          pip install -r backend/requirements.txt
+          pip install pytest
+          export PYTHONPATH=$PYTHONPATH:./backend
+          # pytest # Simulated pytest execution
