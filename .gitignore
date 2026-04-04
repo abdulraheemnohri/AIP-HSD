@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+dist/
+build/
+*.egg-info/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.next/
+out/
+
+# Go
+bin/
+aiphsd-go
+
+# Rust
+target/
+**/*.rs.bk
+
+# Misc
+.DS_Store
+*.log
+audit_log.txt
+maintenance.log

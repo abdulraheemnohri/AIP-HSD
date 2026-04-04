@@ -1,63 +1,60 @@
-# 🛡️ AI-Powered Hybrid Security Dashboard (AIP-HSD)
+# 🛡️ AIP-HSD // UNIVERSAL POLYGLOT SENTINEL
 
 ![Version](https://img.shields.io/badge/version-v1.1.0-blue.svg)
-![Status](https://img.shields.io/badge/status-enterprise--ready-brightgreen.svg)
-![Build](https://img.shields.io/badge/CI--CD-modular-orange.svg)
-![Release](https://img.shields.io/badge/deployment-GHCR--Native-blueviolet.svg)
+![Architecture](https://img.shields.io/badge/Architecture-Polyglot--Universal-orange.svg)
+![Packages](https://img.shields.io/badge/Release-Universal--Packages-blueviolet.svg)
 
-**AIP-HSD** is an elite, self-evolving security intelligence ecosystem. It integrates real-time OSINT (Open Source Intelligence) with internal deep-telemetry to provide SOC-level insights, autonomous threat hunting, and automated remediation.
-
----
-
-## 🖥️ Modern HUD Interface
-
-### 🌐 Global Sentinel Map
-High-precision, interactive world projection visualizing global threat vectors and regional hotspots.
-
-![Main Dashboard](https://lh3.googleusercontent.com/aida/ADBb0uiEcp0V-9oDjzOxFO6vuLgPN8sb2bivNeWL5lIfJtxBmA3L0n63jvkfxBbLm5YIp9SudY-HTEI6ysy-XRohlwiQ3dXdMyFsuah4DrsmhSDV5GY93tEnnkHMwfyvTLjmfX3zZ_vmrqL85M91lSTzr5XA2sE1tfgsAX2viSOUMe7uaD_aBokj7PXgWBAKOEIfrwTVS2sq6gf1MamcSSmnBiu7-fQkMsZ1i-Bo7CvM5rHrqkVUfhc66ffwZpo)
-
-### 🤖 AI Query & Malware Reports
-Advanced natural language interface for deep intelligence extraction and detailed behavioral malware analysis.
-
-![AI Query Results](https://lh3.googleusercontent.com/aida/ADBb0uhUfLKdpnEQdoJBYKnENYAmPvUL2Gn2DU559ZA8e_JQvwuLtDqmaMkuIj-VzcOfXdF54YciX89AYoVkOIbtGvD_GE7r1H_HKdSHYTNZMTo_Gkxr7QaKXphI2r1xG4gL15z6-dzwCtPgKa3FxmuJIZ53T3naYD4RjaVF41W4PipXyTMTzDc7Lz4GZcieFRexhTBinTHJeyAPkXY9B_b1E62DUDdAj2dfcrxAoRLN-FnM7YYgDMXRY3hGKk4)
+**AIP-HSD** is the world's most versatile AI-driven security dashboard. It is a full-spectrum intelligence platform implemented across every major programming language, allowing you to choose the stack that fits your organization's expertise and performance requirements.
 
 ---
 
-## 🚀 Key Enterprise Features
+## 🌎 Choose Your Stack
 
-- **🔄 GitHub Auto-Updater**: Automated platform lifecycle management via integrated GitHub Release API.
-- **🏢 Multi-Tenant Core**: Strict data isolation for complex organizational hierarchies.
-- **📈 Historical Trends**: D3.js powered visualization of long-term security metrics (30/90/365 days).
-- **🧪 Malware Sandbox**: Behavioral analysis engine with MITRE ATT&CK mapping and risk scoring.
-- **🛡️ Hardened Defense**: JWT-based authentication, RBAC, and centralized Audit Logging.
-- **🧩 Polyglot Architecture**: High-performance core in **Rust**, native agents in **Go**, and AI logic in **Python**.
+AIP-HSD is available in multiple implementations. You can mix and match any Backend with any Frontend.
 
----
-
-## ⚙️ Modular CI/CD Pipeline
-Our GitHub Action workflows are segmented for maximum reliability and control:
-
-| Workflow | Trigger | Description |
+### ⚙️ Backends
+| Language | Framework | Package / Link |
 | :--- | :--- | :--- |
-| **🚀 Windows Release** | Manual / Tag | Builds standalone `.exe` binaries with PyInstaller. |
-| **🐧 Linux Release** | Manual / Tag | Generates statically-linked ELF binaries. |
-| **🐳 Docker (GHCR)** | Manual / Tag | Pushes multi-arch images to GitHub Container Registry. |
-| **🧪 Test Suite** | PR / Main | Executes full backend and intelligence functional tests. |
+| **Python** | FastAPI | `pip install aiphsd-python` |
+| **Node.js** | Express | `npm install aiphsd-backend-nodejs` |
+| **Go** | Gin | `go get github.com/yourusername/aiphsd-go` |
+| **Rust** | Axum | `cargo install aiphsd-backend-rust` |
+
+### 🖥️ Frontends
+| Framework | Edition | Best For |
+| :--- | :--- | :--- |
+| **React-TS** | Enterprise | Complex, type-safe security HUDs. |
+| **Next.js** | Modern | SSR-capable, ultra-fast analytics views. |
+| **Static HTML** | Portable | Zero-dependency, lightweight deployments. |
 
 ---
 
-## 🚦 Deployment & Lifecycle
+## 🪟 Windows Standalone Installer
+For Windows users, we provide a unified **Universal Setup (.exe)**. During installation, you can select your preferred backend and frontend components, and the installer will configure the environment for you.
 
-### 🏁 Quick Start
+---
+
+## 🚀 Key Multi-Stack Features
+- **🔄 Universal AI Orchestrator**: Logic remains consistent across Python, Go, and Rust implementations.
+- **📈 Polyglot Agent Network**: Unified telemetry via Go, C++, and Python agents.
+- **🛡️ Hardened Security**: JWT & RBAC parity across all backend implementations.
+- **🧪 Advanced Sandbox**: Behavior analysis logic ported for high-performance Rust and Node systems.
+
+---
+
+## 🚦 Getting Started (Universal)
+
+### 🐳 Docker (Multi-Stack)
 ```bash
+# Default (Python + React-TS)
 docker-compose -f docker/docker-compose.yml up --build
 ```
 
-### 🆙 Auto-Update Logic
-The platform includes an internal `GitHubAutoUpdater` module. To manually trigger an update to the latest release:
+### 🛠️ Manual Build (Example: Go Backend + Static HUD)
 ```bash
-curl -X POST http://localhost:8000/api/updater/apply -H "Authorization: Bearer <TOKEN>"
+cd backend/go && go build -o aiphsd-go cmd/main.go && ./aiphsd-go
+# Open frontend/html-static/index.html in browser
 ```
 
 ---
-*Architected by Jules // Powered by Global Security Intelligence.*
+*Architected by Jules // The Universal Polyglot Sentinel.*

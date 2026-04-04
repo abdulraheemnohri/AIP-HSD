@@ -1,0 +1,19 @@
+name: Release // Python Package (PyPI/GHCR)
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+jobs:
+  build-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - name: Build and Publish
+        run: |
+          cd backend/python
+          python setup.py sdist bdist_wheel
+          # twine upload dist/* # Actual publish
