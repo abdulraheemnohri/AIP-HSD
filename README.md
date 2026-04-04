@@ -1,78 +1,63 @@
 # 🛡️ AI-Powered Hybrid Security Dashboard (AIP-HSD)
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/yourusername/aiphsd)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Stack](https://img.shields.io/badge/Stack-Polyglot-blue.svg)](#-the-polyglot-sentinel)
-[![Architecture](https://img.shields.io/badge/Architecture-Hybrid--Intelligence-orange.svg)](#-architecture)
+![Version](https://img.shields.io/badge/version-v1.1.0-blue.svg)
+![Status](https://img.shields.io/badge/status-enterprise--ready-brightgreen.svg)
+![Build](https://img.shields.io/badge/CI--CD-modular-orange.svg)
+![Release](https://img.shields.io/badge/deployment-GHCR--Native-blueviolet.svg)
 
-**AIP-HSD** is an enterprise-grade, self-learning security intelligence platform. It merges internal network telemetry with global OSINT (Open Source Intelligence) to provide real-time dashboards, automated threat correlation, and SOC-level predictive analytics.
+**AIP-HSD** is an elite, self-evolving security intelligence ecosystem. It integrates real-time OSINT (Open Source Intelligence) with internal deep-telemetry to provide SOC-level insights, autonomous threat hunting, and automated remediation.
 
 ---
 
-## 🖥️ Modern Dashboard Interface
+## 🖥️ Modern HUD Interface
 
-### 🌐 Global Threat Architecture
-The "Digital Sentinel" HUD provides a high-precision, interactive view of global threat hotspots, synchronized with internal network health.
+### 🌐 Global Sentinel Map
+High-precision, interactive world projection visualizing global threat vectors and regional hotspots.
 
 ![Main Dashboard](https://lh3.googleusercontent.com/aida/ADBb0uiEcp0V-9oDjzOxFO6vuLgPN8sb2bivNeWL5lIfJtxBmA3L0n63jvkfxBbLm5YIp9SudY-HTEI6ysy-XRohlwiQ3dXdMyFsuah4DrsmhSDV5GY93tEnnkHMwfyvTLjmfX3zZ_vmrqL85M91lSTzr5XA2sE1tfgsAX2viSOUMe7uaD_aBokj7PXgWBAKOEIfrwTVS2sq6gf1MamcSSmnBiu7-fQkMsZ1i-Bo7CvM5rHrqkVUfhc66ffwZpo)
 
-### 🤖 AI Core Insights & Queries
-Analysts can query the intelligence system in plain English to receive deep-dive analysis, confidence-scored threat matrixes, and prioritized action items.
+### 🤖 AI Query & Malware Reports
+Advanced natural language interface for deep intelligence extraction and detailed behavioral malware analysis.
 
 ![AI Query Results](https://lh3.googleusercontent.com/aida/ADBb0uhUfLKdpnEQdoJBYKnENYAmPvUL2Gn2DU559ZA8e_JQvwuLtDqmaMkuIj-VzcOfXdF54YciX89AYoVkOIbtGvD_GE7r1H_HKdSHYTNZMTo_Gkxr7QaKXphI2r1xG4gL15z6-dzwCtPgKa3FxmuJIZ53T3naYD4RjaVF41W4PipXyTMTzDc7Lz4GZcieFRexhTBinTHJeyAPkXY9B_b1E62DUDdAj2dfcrxAoRLN-FnM7YYgDMXRY3hGKk4)
 
 ---
 
-## 🛠️ Key Features & Functions
+## 🚀 Key Enterprise Features
 
-- **AI Autonomous Threat Hunter**: Correlation of global OSINT data with internal port and keyword anomalies using high-precision IOC matching.
-- **Real-time Attack Map**: D3.js powered world map and force-directed internal network topology.
-- **AI Malware Sandbox**: Statically analyze and execute suspicious samples with AI-generated risk scoring and capability reporting.
-- **Polyglot Agent Architecture**: Multi-language monitoring agents (Go, C++, Python) for ultra-low latency telemetry.
-- **Unified Risk Scoring**: High-performance Rust-based engine for intensive composite risk calculations.
-- **Automated OSINT Pipelines**: Hourly collection from RSS, web scrapers, and dynamic hidden browser portals.
+- **🔄 GitHub Auto-Updater**: Automated platform lifecycle management via integrated GitHub Release API.
+- **🏢 Multi-Tenant Core**: Strict data isolation for complex organizational hierarchies.
+- **📈 Historical Trends**: D3.js powered visualization of long-term security metrics (30/90/365 days).
+- **🧪 Malware Sandbox**: Behavioral analysis engine with MITRE ATT&CK mapping and risk scoring.
+- **🛡️ Hardened Defense**: JWT-based authentication, RBAC, and centralized Audit Logging.
+- **🧩 Polyglot Architecture**: High-performance core in **Rust**, native agents in **Go**, and AI logic in **Python**.
 
 ---
 
-## 🧩 The Polyglot Sentinel
-AIP-HSD leverages the best programming language for each critical security task:
+## ⚙️ Modular CI/CD Pipeline
+Our GitHub Action workflows are segmented for maximum reliability and control:
 
-| Language | Component | Role |
+| Workflow | Trigger | Description |
 | :--- | :--- | :--- |
-| **Python** | Backend & AI | FastAPI Orchestration, LLM Integration, OSINT Collection |
-| **TypeScript** | Frontend | Enterprise-grade React HUD with Type Safety |
-| **Rust** | Performance Core | Intensive Risk Scoring Engine & Static Malware Analysis |
-| **Go** | Native Agent | Lightweight, statically-linked Endpoint Collector |
-| **C++** | Low-level Monitoring | High-speed Network Packet Sniffer |
-| **Java** | Integration Bridge | Legacy Mainframe & Corporate Log Ingestion |
-| **Ruby** | Maintenance | Platform Health, Periodic Cleanup & Log Archiving |
-| **PHP** | Legacy Web | Compatibility with older SOC Reporting Portals |
-| **Swift/Kotlin** | Mobile Alerts | Native iOS/Android critical threat notifications |
+| **🚀 Windows Release** | Manual / Tag | Builds standalone `.exe` binaries with PyInstaller. |
+| **🐧 Linux Release** | Manual / Tag | Generates statically-linked ELF binaries. |
+| **🐳 Docker (GHCR)** | Manual / Tag | Pushes multi-arch images to GitHub Container Registry. |
+| **🧪 Test Suite** | PR / Main | Executes full backend and intelligence functional tests. |
 
 ---
 
-## 🚀 Architecture
-The platform is designed for massive scalability and real-time responsiveness.
+## 🚦 Deployment & Lifecycle
 
-1. **Collectors**: Multi-language agents push telemetry to the Backend API via JSON/REST.
-2. **Aggregators**: Python-based scrapers pull global intelligence from the web.
-3. **Analyzer**: The AI module correlates data and delegates heavy math to the **Rust Performance Core**.
-4. **Dashboard**: The React/TypeScript HUD visualizes findings in real-time via WebSocket/Polling.
-
----
-
-## 🚦 Getting Started
-
-### 🐳 Docker Deployment
+### 🏁 Quick Start
 ```bash
 docker-compose -f docker/docker-compose.yml up --build
 ```
 
-### 🏗️ Local Development
-- **Backend**: `cd backend && pip install -r requirements.txt && uvicorn main:app --reload`
-- **Frontend**: `cd frontend && npm install && npm start`
-- **Rust Core**: `cd rust_module && cargo build --release`
-- **Go Agent**: `cd agents/go && go build -o collector`
+### 🆙 Auto-Update Logic
+The platform includes an internal `GitHubAutoUpdater` module. To manually trigger an update to the latest release:
+```bash
+curl -X POST http://localhost:8000/api/updater/apply -H "Authorization: Bearer <TOKEN>"
+```
 
 ---
-*Created by Jules, Powered by Hybrid Intelligence.*
+*Architected by Jules // Powered by Global Security Intelligence.*

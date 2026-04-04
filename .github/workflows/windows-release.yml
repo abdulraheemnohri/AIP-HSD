@@ -1,0 +1,29 @@
+name: Release // Windows Binary
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-windows:
+    name: Build Windows x86_64 Binary
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          pip install -r backend/requirements.txt
+          pip install pyinstaller
+      - name: Build Binary
+        run: pyinstaller --onefile --name hsod-windows backend/main.py
+      - name: Upload Binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: hsod-windows
+          path: dist/hsod-windows.exe
