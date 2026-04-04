@@ -17,6 +17,7 @@ class Token(BaseModel):
 class User(BaseModel):
     username: str
     role: str # 'admin', 'analyst', 'executive'
+    tenant_id: str # Added Multi-Tenant support
 
 def verify_password(plain_password, hashed_password):
     return pwd_context.verify(plain_password, hashed_password)
@@ -36,9 +37,11 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None):
 
 @router.post("/token", response_model=Token)
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
-    # Mock user verification for initial skeleton
-    if form_data.username == "admin" and form_data.password == "password":
-        access_token = create_access_token(data={"sub": form_data.username, "role": "admin"})
+    # Mock tenant assignments for the skeleton
+    tenant_id = "TENANT-ALPHA" if form_data.username == "admin" else "TENANT-BETA"
+
+    if form_data.username in ["admin", "analyst"] and form_data.password == "password":
+        access_token = create_access_token(data={"sub": form_data.username, "role": "admin", "tenant_id": tenant_id})
         return {"access_token": access_token, "token_type": "bearer"}
     raise HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
@@ -56,13 +59,9 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
         payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
         username: str = payload.get("sub")
         role: str = payload.get("role")
-        if username is None:
+        tenant_id: str = payload.get("tenant_id")
+        if username is None or tenant_id is None:
             raise credentials_exception
-        return User(username=username, role=role)
+        return User(username=username, role=role, tenant_id=tenant_id)
     except JWTError:
         raise credentials_exception
-
-def check_admin_role(user: User = Depends(get_current_user)):
-    if user.role != "admin":
-        raise HTTPException(status_code=403, detail="Admin role required")
-    return user
