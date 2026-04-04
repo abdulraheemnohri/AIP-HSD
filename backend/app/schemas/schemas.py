@@ -9,21 +9,17 @@ class Severity(str, Enum):
     HIGH = "high"
     CRITICAL = "critical"
 
-class ThreatType(str, Enum):
-    MALWARE = "malware"
-    PHISHING = "phishing"
-    RANSOMWARE = "ransomware"
-    DDOS = "ddos"
-    EXPLOIT = "exploit"
-    OTHER = "other"
-
 class DeviceStatus(str, Enum):
     ONLINE = "online"
     OFFLINE = "offline"
     VULNERABLE = "vulnerable"
     COMPROMISED = "compromised"
 
-# Device Schemas with display telemetry
+# Multi-Tenant Base Schema
+class TenantModel(BaseModel):
+    tenant_id: str = Field(..., description="Unique identifier for the organization/tenant")
+
+# Device Schemas
 class DeviceBase(BaseModel):
     ip_address: str
     os: str
@@ -31,12 +27,9 @@ class DeviceBase(BaseModel):
     role: Optional[str] = None
     status: DeviceStatus = DeviceStatus.ONLINE
     risk_score: float = Field(default=0.0, ge=0, le=100)
-    screen_resolution: Optional[str] = None # Added for display telemetry
+    screen_resolution: Optional[str] = None
 
-class DeviceCreate(DeviceBase):
-    pass
-
-class Device(DeviceBase):
+class Device(DeviceBase, TenantModel):
     id: int
     last_scan: Optional[datetime] = None
 
@@ -52,9 +45,6 @@ class ThreatBase(BaseModel):
     location: Optional[str] = None
     description: Optional[str] = None
 
-class ThreatCreate(ThreatBase):
-    pass
-
 class Threat(ThreatBase):
     id: int
     timestamp: datetime
@@ -68,12 +58,8 @@ class AlertBase(BaseModel):
     severity: str
     message: str
     device_id: Optional[int] = None
-    threat_id: Optional[int] = None
 
-class AlertCreate(AlertBase):
-    pass
-
-class Alert(AlertBase):
+class Alert(AlertBase, TenantModel):
     id: int
     timestamp: datetime
 
@@ -84,7 +70,7 @@ class Alert(AlertBase):
 class AIQueryRequest(BaseModel):
     query_text: str
 
-class AIQueryResponse(BaseModel):
+class AIQueryResponse(BaseModel, TenantModel):
     id: int
     query_text: str
     ai_response: str
@@ -95,9 +81,8 @@ class AIQueryResponse(BaseModel):
         from_attributes = True
 
 # Dashboard Summary Schema
-class DashboardSummary(BaseModel):
+class DashboardSummary(BaseModel, TenantModel):
     global_threat_level: float
     internal_threat_level: float
     network_health: float
-    error_count: int
     active_alerts: int
