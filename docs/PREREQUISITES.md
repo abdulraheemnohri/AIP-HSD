@@ -1,44 +1,75 @@
-# 🛠️ AIP-HSD // System Prerequisites & Toolchains
+# 🛠️ AIP-HSD // System Prerequisites & Hardware Requirements
 
-To run the full-spectrum **AIP-HSD** platform, your system must have the following tools and runtimes installed. Due to the project's hyper-polyglot nature, we recommend using the Dockerized deployment to avoid manual environment setup.
+This document provides exhaustive hardware and software requirements for every component of the **AIP-HSD** (AI-Powered Hybrid Security Dashboard) platform.
 
-## 🐍 Primary Core
-- **Python 3.12+**: Required for Backend (FastAPI), AI Logic, and SOAR engine.
-- **Node.js 18+ (LTS)**: Required for React-TS/Next.js frontends and Node.js backend.
-- **Go 1.21+**: Required for native agents and Blockchain audit chain.
-- **Rust 1.75+ (Cargo)**: Required for Performance Core (PQC/HE/Malware Analysis).
+## 🏢 Core Platform Requirements (Universal)
 
-## 🔬 Scientific & Specialized
-- **Julia 1.9+**: Required for Risk Forecasting module.
-- **Zig 0.11+**: Required for high-speed Packet Parser agent.
-- **Elixir 1.15+ / OTP 26+**: Required for Real-time Alert Hub.
-- **R 4.3+**: Required for Statistical Threat Modeling.
-- **Gfortran 11+**: Required for Monte Carlo Risk Simulator.
-- **.NET 6.0 SDK (F#)**: Required for Risk Validator module.
-
-## 🏛️ Legacy & Logic
-- **OpenCOBOL (GnuCOBOL)**: Required for Mainframe Security Monitor.
-- **Perl 5.30+**: Required for Legacy Log Forensics.
-- **Ruby 3.0+**: Required for Platform Maintenance tools.
-- **PHP 8.1+**: Required for Legacy Reporting Portal.
-- **Clojure CLI / Leiningen**: Required for Logic Rule Engine.
-- **GHC (Haskell)**: Required for Formal Policy Verifier.
-
-## 🕸️ Web3 & Kernel
-- **Solc (Solidity Compiler)**: Required for Smart Contract Auditor.
-- **Clang/LLVM & Libbpf**: Required for eBPF Deep Observability agent.
-- **AssemblyScript (asc)**: Required for Wasm Edge Monitor.
-
-## 📱 Mobile & UI
-- **Flutter SDK (Dart)**: Required for Mobile Sentinel Dashboard.
-- **Xcode (macOS)**: For iOS notification service compilation.
-- **Android Studio / SDK**: For Android notification handler.
-
-## 🏗️ Infrastructure
-- **Docker & Docker Compose**: Recommended for all-in-one deployment.
-- **Terraform 1.5+**: For cloud resource provisioning.
-- **Ansible 2.14+**: For automated server configuration.
-- **Inno Setup (Windows)**: For generating the Universal .exe Installer.
+| Language / Stack | CPU (Min) | RAM (Min) | Storage | OS Compatibility |
+| :--- | :--- | :--- | :--- | :--- |
+| **Python (FastAPI/AI)** | 2 Cores | 4GB | 1GB | Windows, Linux, macOS |
+| **Node.js (Next.js/React)** | 2 Cores | 2GB | 500MB | Windows, Linux, macOS |
+| **Go (Agents/Blockchain)** | 1 Core | 512MB | 100MB | Cross-platform (ARM/x86) |
+| **Rust (Performance)** | 2 Cores | 1GB | 200MB | Cross-platform |
 
 ---
-*If you lack these tools, use `docker-compose up` to run the pre-configured environment.*
+
+## 🔬 Scientific & High-Performance Tiers
+
+### 🔮 Risk Forecasting (Julia)
+- **CPU**: 4 Cores recommended for parallel simulations.
+- **RAM**: 8GB+ (Julia JIT compilation is memory intensive).
+- **Toolchain**: Julia 1.9+, `Plots.jl`, `DataFrames.jl`.
+
+### ⚡ Packet Analysis (Zig/C++)
+- **CPU**: High clock speed (3.0GHz+) for zero-latency parsing.
+- **RAM**: 512MB dedicated.
+- **Toolchain**: Zig 0.11+, GCC/Clang 12+.
+
+### 🔴 Red Team & Risk Sim (Fortran/R)
+- **CPU**: AVX-512 support recommended for Fortran simulations.
+- **RAM**: 4GB+.
+- **Toolchain**: Gfortran 11+, R-base 4.3+.
+
+---
+
+## 🏛️ Legacy & Logic Tiers
+
+| Tool | Requirements | OS Requirement |
+| :--- | :--- | :--- |
+| **COBOL (Mainframe)** | GnuCOBOL 3.1+ | Linux (Preferred) or Windows (Cygwin) |
+| **Java (Enterprise)** | OpenJDK 17+, 2GB RAM | Cross-platform |
+| **Haskell (Formal)** | GHC 9.4+, 4GB RAM | Linux, macOS |
+| **Perl (Forensics)** | Perl 5.30+ | Unix-like (Linux/macOS/BSD) |
+| **Ruby (Maintenance)** | Ruby 3.0+ | Cross-platform |
+
+---
+
+## 🕸️ Web3, Edge & Mobile Tiers
+
+### ⛓️ Smart Contract Audit (Solidity)
+- **RAM**: 4GB+ for large graph analysis.
+- **Toolchain**: Solc 0.8.20+, Hardhat/Foundry (optional).
+
+### 🧬 Edge Monitoring (Wasm/eBPF)
+- **eBPF**: Linux Kernel 5.15+ (Strict Requirement). Root access required.
+- **Wasm**: AssemblyScript compiler (asc), Node.js runtime.
+
+### 📱 Mobile Sentinel (Flutter/Swift/Kotlin)
+- **Development**: 16GB RAM recommended for IDEs and Emulators.
+- **Hardware**: iOS (Xcode 15+), Android (API Level 31+).
+
+---
+
+## 🏗️ Infrastructure & Automation
+- **Docker**: Version 24.0+ with **Docker Buildx** (for multi-arch images).
+- **Terraform**: v1.5+ for state management.
+- **Inno Setup**: Required specifically on **Windows** to build the `.exe` installer.
+
+---
+## 🚦 Minimum Overall System Specs (Full Stack)
+- **CPU**: 8 Cores (Modern x86_64 or ARM64)
+- **RAM**: 16GB
+- **Disk**: 20GB SSD
+- **Network**: 1Gbps for real-time OSINT collection
+
+*Note: For production workloads, we recommend a distributed deployment using the provided Terraform modules.*
