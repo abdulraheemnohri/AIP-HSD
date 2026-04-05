@@ -1,0 +1,59 @@
+name: Release // Specialized Polyglot Components
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-zig:
+    name: Build Zig Packet Parser
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: mlugg/setup-zig@v1
+        with:
+          version: 0.11.0
+      - name: Build
+        run: zig build-exe agents/zig/parser.zig
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: aiphsd-zig-parser
+          path: parser
+
+  build-wasm:
+    name: Build Wasm Edge Monitor
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install AssemblyScript
+        run: npm install -g assemblyscript
+      - name: Build Wasm
+        run: asc agents/wasm/monitor.ts --target release
+
+  test-julia:
+    name: Test Julia Forecaster
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: julia-actions/setup-julia@v1
+      - name: Run Forecaster
+        run: julia ai_module/forecaster.jl
+
+  test-elixir:
+    name: Test Elixir Alert Hub
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: erlef/setup-beam@v1
+        with:
+          elixir-version: '1.15'
+          otp-version: '26'
+      - name: Compile
+        run: elixirc integrations/elixir/alert_hub.ex

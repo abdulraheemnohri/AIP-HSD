@@ -1,60 +1,55 @@
-# 🛡️ AIP-HSD // UNIVERSAL POLYGLOT SENTINEL
+# 🛡️ AIP-HSD // THE ZERO TRUST EDGE & ADVERSARIAL SHIELD
 
-![Version](https://img.shields.io/badge/version-v1.1.0-blue.svg)
-![Architecture](https://img.shields.io/badge/Architecture-Polyglot--Universal-orange.svg)
-![Packages](https://img.shields.io/badge/Release-Universal--Packages-blueviolet.svg)
+![Version](https://img.shields.io/badge/version-v1.3.0-emerald.svg)
+![Architecture](https://img.shields.io/badge/Architecture-Wasm--Edge--ZeroTrust-orange.svg)
+![AI-Defense](https://img.shields.io/badge/Defense-Adversarial--Shield-blue.svg)
 
-**AIP-HSD** is the world's most versatile AI-driven security dashboard. It is a full-spectrum intelligence platform implemented across every major programming language, allowing you to choose the stack that fits your organization's expertise and performance requirements.
-
----
-
-## 🌎 Choose Your Stack
-
-AIP-HSD is available in multiple implementations. You can mix and match any Backend with any Frontend.
-
-### ⚙️ Backends
-| Language | Framework | Package / Link |
-| :--- | :--- | :--- |
-| **Python** | FastAPI | `pip install aiphsd-python` |
-| **Node.js** | Express | `npm install aiphsd-backend-nodejs` |
-| **Go** | Gin | `go get github.com/yourusername/aiphsd-go` |
-| **Rust** | Axum | `cargo install aiphsd-backend-rust` |
-
-### 🖥️ Frontends
-| Framework | Edition | Best For |
-| :--- | :--- | :--- |
-| **React-TS** | Enterprise | Complex, type-safe security HUDs. |
-| **Next.js** | Modern | SSR-capable, ultra-fast analytics views. |
-| **Static HTML** | Portable | Zero-dependency, lightweight deployments. |
+**AIP-HSD** is the world's most comprehensive, polyglot security intelligence platform. It now features a sandboxed Wasm edge monitor, a sophisticated Zero Trust policy engine, and an adversarial shield to protect against AI prompt injections.
 
 ---
 
-## 🪟 Windows Standalone Installer
-For Windows users, we provide a unified **Universal Setup (.exe)**. During installation, you can select your preferred backend and frontend components, and the installer will configure the environment for you.
+## ⚡ Cutting-Edge Intelligence
+
+### 🧬 Wasm Edge Monitoring (AssemblyScript)
+Run lightweight, sandboxed security logic at the extreme edge. The Wasm monitor detects anomalies with near-zero overhead, ensuring pervasive intelligence across the entire infrastructure.
+
+### 🛡️ Adversarial AI Shield (Python)
+An automated defense layer that scans all incoming user queries for adversarial patterns and prompt injections, preserving the integrity of the platform's core intelligence.
+
+### 🔒 Zero Trust Policy Engine (Python)
+Implements "Never Trust, Always Verify" at the service level. Dynamically calculates trust scores for every access request based on location, compliance, and user context.
+
+### ⛓️ Blockchain Audit Trail (Go)
+Immutable logging for critical security events. Leveraging a decentralized ledger paradigm, the platform ensures that forensic evidence remains tamper-proof and cryptographically verified.
 
 ---
 
-## 🚀 Key Multi-Stack Features
-- **🔄 Universal AI Orchestrator**: Logic remains consistent across Python, Go, and Rust implementations.
-- **📈 Polyglot Agent Network**: Unified telemetry via Go, C++, and Python agents.
-- **🛡️ Hardened Security**: JWT & RBAC parity across all backend implementations.
-- **🧪 Advanced Sandbox**: Behavior analysis logic ported for high-performance Rust and Node systems.
+## 🕶️ Immersive WebXR SOC
+The 3D global HUD is now WebXR enabled, supporting native VR and AR environments for next-generation security monitoring and incident visualization.
 
 ---
 
-## 🚦 Getting Started (Universal)
+## 🌎 Standardized Intelligence Sharing
+Full support for **STIX 2.1** indicators and **TAXII** upload protocols, allowing for seamless integration with global Cyber Threat Intelligence (CTI) ecosystems.
 
-### 🐳 Docker (Multi-Stack)
+---
+
+## 🧩 Polyglot Technology Matrix (V1.3)
+| Tier | Technologies |
+| :--- | :--- |
+| **Core Systems** | Python (AI/SOAR), Rust (PQC/Malware), Go (Blockchain), Zig (Packets) |
+| **Edge & Compute** | Wasm (Edge Monitor), Julia (Forecasting), AssemblyScript |
+| **Frontends** | React-TS (WebXR), Next.js 14, Three.js, Static HTML |
+| **Reliability** | Elixir (Alert Hub), Haskell (Policy Verifier) |
+| **Infrastructure** | Terraform, Ansible, Docker (GHCR), GitHub Actions |
+
+---
+
+## 🚦 Getting Started
 ```bash
-# Default (Python + React-TS)
+# Deploy full-spectrum platform
 docker-compose -f docker/docker-compose.yml up --build
 ```
 
-### 🛠️ Manual Build (Example: Go Backend + Static HUD)
-```bash
-cd backend/go && go build -o aiphsd-go cmd/main.go && ./aiphsd-go
-# Open frontend/html-static/index.html in browser
-```
-
 ---
-*Architected by Jules // The Universal Polyglot Sentinel.*
+*Architected by Jules // The Zero Trust Edge & Adversarial Shield.*
