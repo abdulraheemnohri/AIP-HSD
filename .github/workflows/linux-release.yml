@@ -18,12 +18,14 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: |
-          pip install -r backend/requirements.txt
+          pip install -r backend/python/requirements.txt
           pip install pyinstaller
       - name: Build Binary
-        run: pyinstaller --onefile --name hsod-linux backend/main.py
+        run: |
+          cd backend/python
+          pyinstaller --onefile --name hsod-linux main.py
       - name: Upload Binary
         uses: actions/upload-artifact@v3
         with:
           name: hsod-linux
-          path: dist/hsod-linux
+          path: backend/python/dist/hsod-linux
