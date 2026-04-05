@@ -23,6 +23,20 @@ jobs:
           name: aiphsd-zig-parser
           path: parser
 
+  build-wasm:
+    name: Build Wasm Edge Monitor
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install AssemblyScript
+        run: npm install -g assemblyscript
+      - name: Build Wasm
+        run: asc agents/wasm/monitor.ts --target release
+
   test-julia:
     name: Test Julia Forecaster
     runs-on: ubuntu-latest
