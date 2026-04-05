@@ -23,7 +23,7 @@ jobs:
       - name: Build Binary
         run: pyinstaller --onefile --name hsod-linux backend/main.py
       - name: Upload Binary
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: hsod-linux
           path: dist/hsod-linux
