@@ -10,6 +10,8 @@ from .auth import router as auth_router
 from .compliance import router as compliance_router
 from .updater import router as updater_router
 from .cti import router as cti_router
+from .search import router as search_router
+from .settings import router as settings_router
 
 router = APIRouter()
 router.include_router(auth_router, prefix="/auth", tags=["Authentication"])
@@ -23,3 +25,5 @@ router.include_router(malware_sandbox_router, prefix="/malware-sandbox", tags=["
 router.include_router(compliance_router, prefix="/compliance", tags=["Compliance Monitoring"])
 router.include_router(updater_router, prefix="/updater", tags=["Auto-Updater"])
 router.include_router(cti_router, prefix="/cti", tags=["Threat Intelligence Sharing"])
+router.include_router(search_router, prefix="/search", tags=["Global Search"])
+router.include_router(settings_router, prefix="/settings", tags=["Platform Settings"])
