@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ThemeProvider, CssBaseline, Box, Grid, Container, Typography, AppBar, Toolbar, IconButton, Badge, LinearProgress, Alert, useMediaQuery } from '@mui/material';
+import { ThemeProvider, CssBaseline, Box, Grid, Container, Typography, AppBar, Toolbar, IconButton, Badge, LinearProgress, Alert, useMediaQuery, Chip, Stack } from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -16,6 +16,7 @@ import TrendChart from './components/TrendChart';
 import SecuritySettings from './components/SecuritySettings';
 import ThreeDSOC from './components/ThreeDSOC';
 import WarRoomHITL from './components/WarRoomHITL';
+import CyberTwin from './components/CyberTwin';
 import useDashboardData from './hooks/useDashboardData';
 
 function App() {
@@ -31,9 +32,18 @@ function App() {
 
         <AppBar position="static" color="transparent" elevation={0} sx={{ borderBottom: '1px solid rgba(0, 229, 255, 0.2)' }}>
           <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'primary.main', fontWeight: 'bold', letterSpacing: 2 }}>
-              AIP-HSD // SENTINEL COMMAND
+            <Typography variant="h6" component="div" sx={{ color: 'primary.main', fontWeight: 'bold', letterSpacing: 2 }}>
+              AIP-HSD // SENTINEL
             </Typography>
+
+            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+              <Stack direction="row" spacing={1}>
+                <Chip label="OS: LINUX 6.8" size="small" variant="outlined" color="primary" />
+                <Chip label="RES: 2560x1440" size="small" variant="outlined" color="primary" />
+                <Chip label="TENANT: ALPHA" size="small" variant="outlined" color="secondary" />
+              </Stack>
+            </Box>
+
             {error && <Alert severity="error" variant="outlined" sx={{ mr: 2, py: 0 }}>{error}</Alert>}
             <IconButton color="inherit" onClick={() => setView(view === 'DASHBOARD' ? 'SETTINGS' : 'DASHBOARD')}>
               <SettingsIcon />
@@ -58,6 +68,9 @@ function App() {
                 <Grid container spacing={3}>
                   <Grid item xs={12}>
                     <ThreeDSOC />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <CyberTwin />
                   </Grid>
                   <Grid item xs={12}>
                     <RiskCards summary={summary} />

@@ -4,12 +4,18 @@ use axum::{
 };
 use serde::{Deserialize, Serialize};
 use tower_http::cors::CorsLayer;
+use chrono::{DateTime, Utc};
 
 #[derive(Serialize)]
 struct Threat {
     id: u32,
     name: String,
+    r#type: String,
+    source: String,
     risk_score: f64,
+    location: String,
+    description: String,
+    timestamp: DateTime<Utc>,
 }
 
 #[tokio::main]
@@ -26,6 +32,15 @@ async fn main() {
 
 async fn get_threats() -> Json<Vec<Threat>> {
     Json(vec![
-        Threat { id: 501, name: "Rust-ZeroDay-Alpha".to_string(), risk_score: 99.9 },
+        Threat {
+            id: 501,
+            name: "Rust-ZeroDay-Alpha".to_string(),
+            r#type: "malware".to_string(),
+            source: "RUST-INTEL".to_string(),
+            risk_score: 99.9,
+            location: "EMEA".to_string(),
+            description: "High-performance Rust detection engine alert.".to_string(),
+            timestamp: Utc::now()
+        },
     ])
 }

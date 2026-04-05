@@ -6,31 +6,22 @@ class RSSCollector:
     def __init__(self, feeds: List[str] = None):
         self.feeds = feeds or [
             "https://www.us-cert.gov/ncas/alerts.xml",
-            "https://krebsonsecurity.com/feed/",
-            "https://threatpost.com/feed/"
+            "https://krebsonsecurity.com/feed/"
         ]
 
-    def fetch_latest(self) -> List[Dict]:
-        """Simulates fetching latest security alerts from RSS feeds."""
-        print(f"Fetching from {len(self.feeds)} RSS feeds...")
-        # Mock data
-        return [
-            {
-                "title": "New Ransomware Variant 'Delta' Targeting Critical Infrastructure",
-                "link": "https://example.com/alert/delta",
-                "source": "US-CERT",
-                "published": datetime.datetime.now().isoformat()
-            },
-            {
-                "title": "Zero-day vulnerability in popular web server discovered",
-                "link": "https://example.com/blog/zero-day",
-                "source": "KrebsonSecurity",
-                "published": datetime.datetime.now().isoformat()
-            }
+    def fetch_latest(self, keywords: List[str] = None) -> List[Dict]:
+        """Fetches latest alerts, optionally filtering by keywords."""
+        print(f"RSS: Fetching intelligence (Keywords: {keywords or 'All'})...")
+        mock_data = [
+            {"title": "New Ransomware Variant 'Delta'", "source": "US-CERT", "published": datetime.datetime.now().isoformat()},
+            {"title": "Zero-day vulnerability in web server", "source": "KrebsonSecurity", "published": datetime.datetime.now().isoformat()}
         ]
+
+        if not keywords:
+            return mock_data
+
+        return [item for item in mock_data if any(kw.lower() in item['title'].lower() for kw in keywords)]
 
 if __name__ == "__main__":
     collector = RSSCollector()
-    alerts = collector.fetch_latest()
-    for alert in alerts:
-        print(f"[{alert['source']}] {alert['title']}")
+    print(collector.fetch_latest(["Ransomware"]))
