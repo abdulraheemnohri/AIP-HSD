@@ -1,0 +1,19 @@
+      * AIP-HSD Mainframe Security Monitor (COBOL)
+      * Simulates legacy mainframe monitoring for enterprise integration.
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. SECMON.
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 WS-SECURITY-STATUS PIC X(20) VALUE "ALL-SYSTEMS-NOMINAL".
+       01 WS-ALERT-COUNT PIC 9(4) VALUE 0.
+       01 WS-TIMESTAMP PIC X(20) VALUE "2024-04-04 15:00:00".
+
+       PROCEDURE DIVISION.
+           DISPLAY "AIP-HSD MAINFRAME SENTINEL STARTING...".
+           DISPLAY "CURRENT STATUS: " WS-SECURITY-STATUS.
+           IF WS-ALERT-COUNT = 0
+               DISPLAY "NO CRITICAL ANOMALIES ON Z/OS".
+           ELSE
+               DISPLAY "CRITICAL MAINFRAME ALERT DETECTED".
+           STOP RUN.

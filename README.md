@@ -1,55 +1,47 @@
-# 🛡️ AIP-HSD // THE INFINITE POLYGLOT MASTER
+# 🛡️ AIP-HSD // THE HYPER-POLYGLOT SENTINEL (V1.5)
 
-![Version](https://img.shields.io/badge/version-v1.4.0-gold.svg)
-![Architecture](https://img.shields.io/badge/Architecture-Universal--Infinite--Polyglot-orange.svg)
-![Languages](https://img.shields.io/badge/Stack-20+--Languages-blue.svg)
+![Version](https://img.shields.io/badge/version-v1.5.0-red.svg)
+![Languages](https://img.shields.io/badge/Stack-30+--Integrated--Tech-blueviolet.svg)
+![Security](https://img.shields.io/badge/Mode-Autonomous--Red--Team-orange.svg)
+![Compliance](https://img.shields.io/badge/XAI-Explainable--Security-brightgreen.svg)
 
-**AIP-HSD** is the world's most technologically diverse security dashboard. It implements a complete, self-healing intelligence ecosystem across every major programming paradigm, from high-performance systems languages to advanced scientific computing and legacy enterprise bridges.
-
----
-
-## 🚀 Phase 11: Polyglot Mastery
-
-### 🕸️ Dynamic Deception (Python)
-Managed virtual decoys and honeypots (DBs, Credential Files) deployed dynamically to alert on lateral movement with zero false positives.
-
-### 🔐 Privacy-Preserving HE (Rust)
-Homomorphic Encryption implementation allowing indicator matching on encrypted data, preserving privacy across the intelligence lifecycle.
-
-### 🏢 Big Data Ingestion (Scala)
-High-throughput telemetry pipeline capable of ingesting millions of security events into a distributed data lake.
-
-### 🔬 Scientific & Numerical Core
-- **Julia**: High-speed risk forecasting and trend projection.
-- **Fortran**: Monte Carlo risk simulations for critical infrastructure.
-- **R**: Advanced statistical modeling and anomaly distribution analysis.
+**AIP-HSD** is now the world's most technologically advanced and diverse security platform. Supporting over 30 integrated languages and tools, it represents the ultimate convergence of legacy reliability, systems performance, and modern AI intelligence.
 
 ---
 
-## 🧩 The Universal Tech Matrix
+## 🚀 Phase 12: Hyper-Polyglot Mastery
+
+### 🔴 Autonomous Red Team (Python)
+Internal self-probing agents that safely simulate sophisticated attack vectors (SQLi, Lateral Movement) to stress-test detection pipelines in real-time.
+
+### 🧠 Explainable AI (XAI)
+Transparent reasoning for every critical security alert. The XAI engine generates human-readable reports detailing the specific telemetry and correlation paths that led to an AI decision.
+
+### 🏛️ Mainframe & Web3 Integration
+- **COBOL**: Native legacy mainframe monitoring for enterprise Z/OS environments.
+- **Solidity**: Automated smart contract auditing and decentralized asset risk scoring.
+- **eBPF**: Kernel-level deep observability for zero-day process detection.
+
+### 🌀 3D Cyber-Twin & WebXR
+The "Sentinel Command" HUD now features a **Cyber-Twin** view—a real-time 3D digital twin of your organizational infrastructure for immersive incident response.
+
+---
+
+## 🧩 The Universal Language Matrix (30+)
 
 | Domain | Technologies |
 | :--- | :--- |
-| **Main Systems** | Python (AI/SOAR), Node.js (Express), Go (Gin/Blockchain), Rust (PQC/Privacy) |
-| **Scientific** | Julia (Forecast), Fortran (Sim), R (Stats), Scala (Big Data) |
-| **Systems/Edge** | Zig (Packet Parsing), Wasm (AssemblyScript), C++ (Sniffer), Lua (Filtering) |
-| **Logic/Verify** | Elixir (Alert Hub), Clojure (Rules), Haskell (Formal Policy) |
-| **Legacy/Util** | Java (Mainframe), Perl (Forensics), Ruby (Maintenance), PHP (Reporting) |
-| **Mobile/UI** | React-TS (WebXR), Next.js 14, Flutter (Dart), Swift, Kotlin |
-| **Ops** | Terraform, Ansible, Docker (GHCR), GitHub Actions |
+| **Main Systems** | Python (AI/RedTeam), Node.js, Go (Blockchain), Rust (PQC/HE) |
+| **Scientific** | Julia (Forecast), Fortran (Sim), R (Stats), Scala (BigData), F# |
+| **Low-level** | Zig (Packets), C++ (Sniffer), eBPF (Kernel), COBOL (Mainframe) |
+| **Logic/Verify** | Elixir (Hub), Clojure (Rules), Haskell (Policy), Solidity (Web3) |
+| **Web/Script** | React-TS, Next.js 14, Flutter (Dart), PHP, Ruby, Perl, Lua |
+| **Infra/Ops** | Terraform, Ansible, Docker, AssemblyScript (Wasm), Inno Setup |
 
 ---
 
-## 🕹️ War Room & HITL
-The command center now features a **Human-in-the-Loop (HITL)** interface for manual authorization of critical AI-suggested remediation tasks, ensuring human oversight for the sentinel's autonomous actions.
+## 🕹️ Autonomous Command Center
+The platform can now autonomously hunt, simulate attacks, explain its reasoning, and remediate threats across every layer of the corporate stack—from the kernel to the cloud.
 
 ---
-
-## 🚦 Deployment
-```bash
-# Deploy the full polyglot sentinel
-docker-compose -f docker/docker-compose.yml up --build
-```
-
----
-*Architected by Jules // The Infinite Polyglot Master.*
+*Architected by Jules // The Hyper-Polyglot Sentinel.*
