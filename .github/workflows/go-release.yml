@@ -17,7 +17,7 @@ jobs:
           cd backend/go
           go build -o aiphsd-go cmd/main.go
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: aiphsd-go-binary
           path: backend/go/aiphsd-go
