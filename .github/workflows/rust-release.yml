@@ -15,7 +15,7 @@ jobs:
           cd backend/rust_server
           cargo build --release
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@4
         with:
           name: aiphsd-rust-binary
           path: backend/rust_server/target/release/aiphsd-backend-rust
