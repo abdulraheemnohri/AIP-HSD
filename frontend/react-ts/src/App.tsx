@@ -14,13 +14,14 @@ import MalwareSandboxPanel from './components/MalwareSandboxPanel';
 import ThreatCorrelationGraph from './components/ThreatCorrelationGraph';
 import TrendChart from './components/TrendChart';
 import SecuritySettings from './components/SecuritySettings';
+import ThreeDSOC from './components/ThreeDSOC';
+import WarRoomHITL from './components/WarRoomHITL';
 import useDashboardData from './hooks/useDashboardData';
 
 function App() {
   const { summary, alerts, loading, error } = useDashboardData();
   const [view, setView] = useState<'DASHBOARD' | 'SETTINGS'>('DASHBOARD');
   const isTablet = useMediaQuery(theme.breakpoints.between('md', 'lg'));
-  const isLinuxWorkstation = true; // Simulating reported telemetry
 
   return (
     <ThemeProvider theme={theme}>
@@ -31,7 +32,7 @@ function App() {
         <AppBar position="static" color="transparent" elevation={0} sx={{ borderBottom: '1px solid rgba(0, 229, 255, 0.2)' }}>
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'primary.main', fontWeight: 'bold', letterSpacing: 2 }}>
-              AIP-HSD // {isLinuxWorkstation ? "LINUX WORKSTATION" : "SENTINEL CORE"}
+              AIP-HSD // SENTINEL COMMAND
             </Typography>
             {error && <Alert severity="error" variant="outlined" sx={{ mr: 2, py: 0 }}>{error}</Alert>}
             <IconButton color="inherit" onClick={() => setView(view === 'DASHBOARD' ? 'SETTINGS' : 'DASHBOARD')}>
@@ -56,7 +57,7 @@ function App() {
               <Grid item xs={12} lg={8}>
                 <Grid container spacing={3}>
                   <Grid item xs={12}>
-                    <ThreatMap />
+                    <ThreeDSOC />
                   </Grid>
                   <Grid item xs={12}>
                     <RiskCards summary={summary} />
@@ -68,7 +69,10 @@ function App() {
               </Grid>
 
               <Grid item xs={12} lg={4}>
-                <AlertsFeed alerts={alerts} />
+                <Stack spacing={3}>
+                  <WarRoomHITL />
+                  <AlertsFeed alerts={alerts} />
+                </Stack>
               </Grid>
 
               <Grid item xs={12} md={isTablet ? 12 : 6}>

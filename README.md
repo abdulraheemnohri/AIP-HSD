@@ -1,55 +1,55 @@
-# 🛡️ AIP-HSD // THE ZERO TRUST EDGE & ADVERSARIAL SHIELD
+# 🛡️ AIP-HSD // THE INFINITE POLYGLOT MASTER
 
-![Version](https://img.shields.io/badge/version-v1.3.0-emerald.svg)
-![Architecture](https://img.shields.io/badge/Architecture-Wasm--Edge--ZeroTrust-orange.svg)
-![AI-Defense](https://img.shields.io/badge/Defense-Adversarial--Shield-blue.svg)
+![Version](https://img.shields.io/badge/version-v1.4.0-gold.svg)
+![Architecture](https://img.shields.io/badge/Architecture-Universal--Infinite--Polyglot-orange.svg)
+![Languages](https://img.shields.io/badge/Stack-20+--Languages-blue.svg)
 
-**AIP-HSD** is the world's most comprehensive, polyglot security intelligence platform. It now features a sandboxed Wasm edge monitor, a sophisticated Zero Trust policy engine, and an adversarial shield to protect against AI prompt injections.
-
----
-
-## ⚡ Cutting-Edge Intelligence
-
-### 🧬 Wasm Edge Monitoring (AssemblyScript)
-Run lightweight, sandboxed security logic at the extreme edge. The Wasm monitor detects anomalies with near-zero overhead, ensuring pervasive intelligence across the entire infrastructure.
-
-### 🛡️ Adversarial AI Shield (Python)
-An automated defense layer that scans all incoming user queries for adversarial patterns and prompt injections, preserving the integrity of the platform's core intelligence.
-
-### 🔒 Zero Trust Policy Engine (Python)
-Implements "Never Trust, Always Verify" at the service level. Dynamically calculates trust scores for every access request based on location, compliance, and user context.
-
-### ⛓️ Blockchain Audit Trail (Go)
-Immutable logging for critical security events. Leveraging a decentralized ledger paradigm, the platform ensures that forensic evidence remains tamper-proof and cryptographically verified.
+**AIP-HSD** is the world's most technologically diverse security dashboard. It implements a complete, self-healing intelligence ecosystem across every major programming paradigm, from high-performance systems languages to advanced scientific computing and legacy enterprise bridges.
 
 ---
 
-## 🕶️ Immersive WebXR SOC
-The 3D global HUD is now WebXR enabled, supporting native VR and AR environments for next-generation security monitoring and incident visualization.
+## 🚀 Phase 11: Polyglot Mastery
+
+### 🕸️ Dynamic Deception (Python)
+Managed virtual decoys and honeypots (DBs, Credential Files) deployed dynamically to alert on lateral movement with zero false positives.
+
+### 🔐 Privacy-Preserving HE (Rust)
+Homomorphic Encryption implementation allowing indicator matching on encrypted data, preserving privacy across the intelligence lifecycle.
+
+### 🏢 Big Data Ingestion (Scala)
+High-throughput telemetry pipeline capable of ingesting millions of security events into a distributed data lake.
+
+### 🔬 Scientific & Numerical Core
+- **Julia**: High-speed risk forecasting and trend projection.
+- **Fortran**: Monte Carlo risk simulations for critical infrastructure.
+- **R**: Advanced statistical modeling and anomaly distribution analysis.
 
 ---
 
-## 🌎 Standardized Intelligence Sharing
-Full support for **STIX 2.1** indicators and **TAXII** upload protocols, allowing for seamless integration with global Cyber Threat Intelligence (CTI) ecosystems.
+## 🧩 The Universal Tech Matrix
 
----
-
-## 🧩 Polyglot Technology Matrix (V1.3)
-| Tier | Technologies |
+| Domain | Technologies |
 | :--- | :--- |
-| **Core Systems** | Python (AI/SOAR), Rust (PQC/Malware), Go (Blockchain), Zig (Packets) |
-| **Edge & Compute** | Wasm (Edge Monitor), Julia (Forecasting), AssemblyScript |
-| **Frontends** | React-TS (WebXR), Next.js 14, Three.js, Static HTML |
-| **Reliability** | Elixir (Alert Hub), Haskell (Policy Verifier) |
-| **Infrastructure** | Terraform, Ansible, Docker (GHCR), GitHub Actions |
+| **Main Systems** | Python (AI/SOAR), Node.js (Express), Go (Gin/Blockchain), Rust (PQC/Privacy) |
+| **Scientific** | Julia (Forecast), Fortran (Sim), R (Stats), Scala (Big Data) |
+| **Systems/Edge** | Zig (Packet Parsing), Wasm (AssemblyScript), C++ (Sniffer), Lua (Filtering) |
+| **Logic/Verify** | Elixir (Alert Hub), Clojure (Rules), Haskell (Formal Policy) |
+| **Legacy/Util** | Java (Mainframe), Perl (Forensics), Ruby (Maintenance), PHP (Reporting) |
+| **Mobile/UI** | React-TS (WebXR), Next.js 14, Flutter (Dart), Swift, Kotlin |
+| **Ops** | Terraform, Ansible, Docker (GHCR), GitHub Actions |
 
 ---
 
-## 🚦 Getting Started
+## 🕹️ War Room & HITL
+The command center now features a **Human-in-the-Loop (HITL)** interface for manual authorization of critical AI-suggested remediation tasks, ensuring human oversight for the sentinel's autonomous actions.
+
+---
+
+## 🚦 Deployment
 ```bash
-# Deploy full-spectrum platform
+# Deploy the full polyglot sentinel
 docker-compose -f docker/docker-compose.yml up --build
 ```
 
 ---
-*Architected by Jules // The Zero Trust Edge & Adversarial Shield.*
+*Architected by Jules // The Infinite Polyglot Master.*
