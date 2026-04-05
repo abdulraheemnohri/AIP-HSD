@@ -1,0 +1,20 @@
+name: Release // Zig Agent
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-zig:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: mlugg/setup-zig@v1
+        with:
+          version: 0.11.0
+      - name: Build
+        run: zig build-exe agents/zig/parser.zig
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: aiphsd-zig-parser
+          path: parser

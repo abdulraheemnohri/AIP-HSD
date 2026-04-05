@@ -1,8 +1,10 @@
-name: Release // Python Package (PyPI/GHCR)
+name: Release // Python Package
+
 on:
   workflow_dispatch:
   push:
     tags: ['v*']
+
 jobs:
   build-python:
     runs-on: ubuntu-latest
@@ -12,8 +14,14 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
-      - name: Build and Publish
+      - name: Install build tools
+        run: pip install build setuptools wheel
+      - name: Build Package
         run: |
           cd backend/python
-          python setup.py sdist bdist_wheel
-          # twine upload dist/* # Actual publish
+          python -m build
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: aiphsd-python-package
+          path: backend/python/dist/*

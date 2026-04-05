@@ -1,8 +1,10 @@
-name: Release // Node.js Package (NPM/GHCR)
+name: Release // Node.js Package
+
 on:
   workflow_dispatch:
   push:
     tags: ['v*']
+
 jobs:
   build-node:
     runs-on: ubuntu-latest
@@ -12,8 +14,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - name: Build and Publish
+      - name: Build Package
         run: |
           cd backend/nodejs
           npm install
-          # npm publish # Actual publish
+          npm pack
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: aiphsd-node-package
+          path: backend/nodejs/*.tgz

@@ -13,29 +13,32 @@ func main() {
 	{
 		api.GET("/threats", func(c *gin.Context) {
 			c.JSON(http.StatusOK, []gin.H{
-				{
-					"id": 301,
-					"name": "Go-Exploit-Delta",
-					"type": "exploit",
-					"source": "CERT-GO",
-					"risk_score": 88.2,
-					"location": "Global",
-					"description": "Go-based detection of delta exploit.",
-					"timestamp": time.Now().Format(time.RFC3339),
-				},
+				{"id": 301, "name": "Go-Exploit-Delta", "risk_score": 88.2, "type": "exploit", "timestamp": time.Now()},
 			})
 		})
 		api.GET("/alerts", func(c *gin.Context) {
 			c.JSON(http.StatusOK, []gin.H{
-				{
-					"id": 401,
-					"title": "Go Alert: Kernel Anomaly",
-					"severity": "critical",
-					"message": "High-severity anomaly detected via Go agent.",
-					"device_id": 1,
-					"tenant_id": "TENANT-GO",
-					"timestamp": time.Now().Format(time.RFC3339),
+				{"id": 401, "title": "Go Alert: Kernel Anomaly", "severity": "critical", "timestamp": time.Now()},
+			})
+		})
+		api.GET("/compliance/status", func(c *gin.Context) {
+			c.JSON(http.StatusOK, gin.H{
+				"standards": []gin.H{
+					{"name": "ISO 27001", "status": "COMPLIANT", "score": 97.5},
 				},
+			})
+		})
+		api.GET("/search", func(c *gin.Context) {
+			query := c.DefaultQuery("query", "")
+			c.JSON(http.StatusOK, gin.H{
+				"query": query,
+				"results": []string{"Go internal hit 1", "Go internal hit 2"},
+			})
+		})
+		api.GET("/settings", func(c *gin.Context) {
+			c.JSON(http.StatusOK, gin.H{
+				"enable_ai": true,
+				"rbac": "Admin",
 			})
 		})
 	}
