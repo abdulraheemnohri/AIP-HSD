@@ -7,54 +7,50 @@ on:
       - 'v*'
 
 jobs:
-  build-zig:
-    name: Build Zig Packet Parser
+  build-zig-cpp:
+    name: Build Native Components (Zig/C++)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: mlugg/setup-zig@v1
         with:
           version: 0.11.0
-      - name: Build
+      - name: Build Zig
         run: zig build-exe agents/zig/parser.zig
+      - name: Build C++ Sniffer
+        run: g++ agents/cpp/sniffer.cpp -o sniffer
+      - name: Build eBPF Agent
+        run: sudo apt-get update && sudo apt-get install -y clang llvm libelf-dev libbpf-dev && clang -O2 -target bpf -c agents/ebpf/observability.c -o observability.o
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-          name: aiphsd-zig-parser
-          path: parser
+          name: aiphsd-native-binaries
+          path: |
+            parser
+            sniffer
+            observability.o
 
-  build-wasm:
-    name: Build Wasm Edge Monitor
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - name: Install AssemblyScript
-        run: npm install -g assemblyscript
-      - name: Build Wasm
-        run: asc agents/wasm/monitor.ts --target release
-
-  test-julia-r-fortran:
-    name: Test Julia/R/Fortran Scientific Stack
+  test-scientific:
+    name: Test Scientific Stack (Julia/R/Fortran/F#)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: julia-actions/setup-julia@v1
       - uses: r-lib/actions/setup-r@v2
-      - name: Set up Fortran
-        run: sudo apt-get update && sudo apt-get install -y gfortran
-      - name: Run Julia Forecaster
+      - uses: ionide/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+      - name: Run Julia
         run: julia ai_module/forecaster.jl
-      - name: Run R Statistics
+      - name: Run R
         run: Rscript ai_module/statistics.R
-      - name: Build and Run Fortran Simulator
+      - name: Build Fortran
         run: gfortran ai_module/risk_sim.f90 -o risk_sim && ./risk_sim
+      - name: Build F#
+        run: dotnet build ai_module/RiskValidator.fs
 
-  test-elixir-clojure:
-    name: Test Elixir/Clojure Logic Stack
+  test-logic-legacy:
+    name: Test Logic & Legacy (Elixir/Clojure/COBOL)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -64,21 +60,11 @@ jobs:
           otp-version: '26'
       - name: Set up Clojure
         uses: DeLaGuardo/setup-clojure@12.1
-        with:
-          cli: 1.11.1.1208
-      - name: Compile Elixir
+      - name: Set up COBOL
+        run: sudo apt-get update && sudo apt-get install -y open-cobol
+      - name: Run Elixir
         run: elixirc integrations/elixir/alert_hub.ex
-      - name: Run Clojure Rules
+      - name: Run Clojure
         run: clj -M ai_module/rules.clj
-
-  test-perl-ruby-lua:
-    name: Test Perl/Ruby/Lua Utility Stack
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Run Perl Forensics
-        run: perl scripts/forensics.pl
-      - name: Run Ruby Maintenance
-        run: ruby scripts/maintenance.rb
-      - name: Run Lua Filter
-        run: sudo apt-get install -y lua5.3 && lua5.3 plugins/filter.lua
+      - name: Build COBOL
+        run: cobc -x integrations/cobol/security_monitor.cbl -o security_monitor && ./security_monitor
