@@ -1,0 +1,13 @@
+name: Check // Julia Forecaster
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-julia:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: julia-actions/setup-julia@v1
+      - name: Run Forecaster
+        run: julia ai_module/forecaster.jl
